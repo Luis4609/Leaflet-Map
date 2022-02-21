@@ -5,7 +5,8 @@
             "type": "Feature",
             "properties": {
                 "name": "Spa-Francorchamps",
-                "img": "/img/spa.jpg"
+                "img": "/assets/img/spa.jpg",
+                "city": "Stavelot"
             },
             "geometry": {
                 "type": "Point",
@@ -19,7 +20,8 @@
             "type": "Feature",
             "properties": {
                 "name": "Monza",
-                "img": "/img/monza.jfif"
+                "img": "/assets/img/monza.jfif",
+                "city": "Monza"
             },
             "geometry": {
                 "type": "Point",
@@ -33,7 +35,8 @@
             "type": "Feature",
             "properties": {
                 "name": "Suzuka",
-                "img": "/img/suzuka.jfif"
+                "img": "/assets/img/suzuka.jfif",
+                "city": "Suzuka"
             },
             "geometry": {
                 "type": "Point",
@@ -47,7 +50,8 @@
             "type": "Feature",
             "properties": {
                 "name": "Sakhir",
-                "img": "/img/barein-night.jpg"
+                "img": "/assets/img/barein-night.jpg",
+                "city": "Sakhir"
             },
             "geometry": {
                 "type": "Point",
@@ -60,8 +64,9 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Melbourne",
-                "img": "/img/circuito-albert-park-melbourne.jpg"
+                "name": "Albert-Park",
+                "img": "/assets/img/circuito-albert-park-melbourne.jpg",
+                "city": "Melbourne"
             },
             "geometry": {
                 "type": "Point",
@@ -75,7 +80,8 @@
             "type": "Feature",
             "properties": {
                 "name": "Monaco",
-                "img": "/img/monaco.jpg"
+                "img": "/assets/img/monaco.jpg",
+                "city": "Ciudad de Monaco"
             },
             "geometry": {
                 "type": "Point",
@@ -89,7 +95,8 @@
             "type": "Feature",
             "properties": {
                 "name": "Sepang",
-                "img": "/img/Sepang-International.jpg"
+                "img": "/assets/img/Sepang-International.jpg",
+                "city": "Selangor"
             },
             "geometry": {
                 "type": "Point",
@@ -103,7 +110,8 @@
             "type": "Feature",
             "properties": {
                 "name": "Interlagos",
-                "img": "/img/interlagos.jpeg"
+                "img": "/assets/img/interlagos.jpeg",
+                "city": "Sao Paulo"
             },
             "geometry": {
                 "type": "Point",

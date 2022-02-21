@@ -1,0 +1,19 @@
+#map {
+  margin: auto;
+  width: 90%;
+  height: 800px;
+  padding: 10px;
+  border: 2px solid black;
+  flex-grow: 1;
+}
+.main-container {
+  display: flex;
+}
+.cards-container {
+  width: 320px;
+  height: 760px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-right: 10px;
+  margin-top: 10px;
+}

@@ -123,7 +123,7 @@ document.getElementById("show-circuits").addEventListener("click", () => {
          <img src="${circuits[i].properties.img}" class="card-img-top" alt="...">
            <div class="card-body">
                <h5 class="card-title">${circuits[i].properties.name}</h5>
-               <p class="card-text">Circuit description.</p>
+               <p class="card-text">${circuits[i].properties.city}</p>
                <a href="#" class="btn btn-primary">Add to map</a>
             </div>
         </div>`;
@@ -140,7 +140,7 @@ document.getElementById("show-circuits").addEventListener("click", () => {
         );
 
         //ADD TO A TABLE
-        document.getElementById("circuits").innerHTML = cards;
+        document.getElementById("circuits-cards").innerHTML = cards;
         // console.log(`Output = ${output}`)
       }
     }
