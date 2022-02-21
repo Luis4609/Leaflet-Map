@@ -20,6 +20,7 @@ var tiles = L.tileLayer(
 // var markerIES = L.marker([40.446518734158786, -3.6643743227422885]).addTo(map);
 // markerIES.bindPopup("IES Clara del Rey.");
 
+var popup = L.popup();
 //Function onClick para ver las coordenadas donde haces Click
 function onMapClick(e) {
   console.log("Pepe");
@@ -134,7 +135,9 @@ document.getElementById("show-circuits").addEventListener("click", () => {
         ]).addTo(map);
 
         //ADD POPUP TO A MARKER
-        var popUp = markerCircuit.bindPopup(`This circuits is: ${circuits[i].properties.name}`);
+        var popUp = markerCircuit.bindPopup(
+          `This circuits is: ${circuits[i].properties.name}`
+        );
 
         //ADD TO A TABLE
         document.getElementById("circuits").innerHTML = cards;
@@ -144,13 +147,3 @@ document.getElementById("show-circuits").addEventListener("click", () => {
   };
   xhr.send();
 });
-
-var card = `
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">${circuits[i].properties.name}</h5>
-    <p class="card-text">Circuit description.</p>
-    <a href="#" class="btn btn-primary">Add to map</a>
-  </div>
-</div>`;
