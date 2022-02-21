@@ -23,7 +23,6 @@ var tiles = L.tileLayer(
 var popup = L.popup();
 //Function onClick para ver las coordenadas donde haces Click
 function onMapClick(e) {
-  console.log("Pepe");
   popup
     .setLatLng(e.latlng)
     .setContent("You clicked the map at " + e.latlng.toString())
@@ -147,3 +146,70 @@ document.getElementById("show-circuits").addEventListener("click", () => {
   };
   xhr.send();
 });
+
+// //Custom marker
+// const funny = L.icon({
+//   iconUrl: "http://grzegorztomicki.pl/serwisy/pin.png",
+//   iconSize: [50, 58], // size of the icon
+//   iconAnchor: [20, 58], // changed marker icon position
+//   popupAnchor: [0, -60], // changed popup position
+// });
+
+// // create popup contents
+// const customPopup =
+//   '<iframe width="360" height="310" src="https://www.youtube.com/embed/glKDhBuoRUs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+
+// // specify popup options
+// const customOptions = {
+//   maxWidth: "auto", // set max-width
+//   className: "customPopup", // name custom popup
+// };
+
+// // create marker object, pass custom icon as option, pass content and options to popup, add to map
+// L.marker([lat, lng], {
+//   icon: funny,
+// })
+//   .bindPopup(customPopup, customOptions)
+//   .addTo(map);
+
+// Drow polygon, circle, rectangle, polyline
+// --------------------------------------------------
+
+let drawnItems = L.featureGroup().addTo(map);
+
+map.addControl(
+  new L.Control.Draw({
+    edit: {
+      featureGroup: drawnItems,
+      poly: {
+        allowIntersection: false,
+      },
+    },
+    draw: {
+      polygon: {
+        allowIntersection: false,
+        showArea: true,
+      },
+    },
+  })
+);
+
+map.on(L.Draw.Event.CREATED, function (event) {
+  let layer = event.layer;
+  let feature = (layer.feature = layer.feature || {});
+  let type = event.layerType;
+
+  feature.type = feature.type || "Feature";
+  let props = (feature.properties = feature.properties || {});
+
+  props.type = type;
+
+  if (type === "circle") {
+    props.radius = layer.getRadius();
+  }
+
+  drawnItems.addLayer(layer);
+});
+
+
+
