@@ -14,7 +14,7 @@ var tiles = L.tileLayer(
   }
 ).addTo(map);
 
-//ADD MARKER
+//ADD INITIALS MARKERS
 // var marker = L.marker([40.44751150330078, -3.9966411793250676]).addTo(map);
 // marker.bindPopup("Villanueva de la Cañada.");
 // var markerIES = L.marker([40.446518734158786, -3.6643743227422885]).addTo(map);
