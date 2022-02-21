@@ -1,4 +1,4 @@
-var map = L.map("map").setView([40.42052151221396, -3.7068076277600834], 11);
+var map = L.map("map").setView([40.42052151221396, -3.7068076277600834], 3);
 var markers = [];
 
 var tiles = L.tileLayer(
@@ -37,51 +37,120 @@ map.on("click", onMapClick);
 
 map.on("dblclick", onMapDoubleClick);
 
-document.getElementById("show-markers").addEventListener("click", () => {
+// document.getElementById("show-markers").addEventListener("click", () => {
+//   //Read Data from JSON
+//   var xhr = new XMLHttpRequest();
+//   xhr.open("GET", "markers.json", true);
+//   xhr.onload = function () {
+//     if (this.status == 200) {
+//       var response = JSON.parse(xhr.responseText);
+//       console.log(response.features[0]);
+//       var marker = response.features;
+
+//       var output = "";
+
+//       for (var i = 0; i < marker.length; i++) {
+//         //ADD POLYGONS
+//         if (marker[i].geometry.type == "Polygon") {
+//           var polygon = L.polygon([
+//             [
+//               marker[i].geometry.coordinates[0][0][1],
+//               marker[i].geometry.coordinates[0][0][0],
+//             ],
+//             [
+//               marker[i].geometry.coordinates[0][1][1],
+//               marker[i].geometry.coordinates[0][1][0],
+//             ],
+//             [
+//               marker[i].geometry.coordinates[0][2][1],
+//               marker[i].geometry.coordinates[0][2][0],
+//             ],
+//           ]).addTo(map);
+//         }
+//         output += `<li> Coordenadas:   ${marker[i].geometry.coordinates[0]} and : ${marker[i].geometry.coordinates[1]} </li>`;
+//         //ADD MARKERS
+//         var markerCircuit = L.marker([
+//           marker[i].geometry.coordinates[1],
+//           marker[i].geometry.coordinates[0],
+//         ]).addTo(map);
+
+//         //ADD POPUP TO A MARKER
+//         var popUp = markerCircuit.bindPopup("NEW city.");
+
+//         //ADD TO A TABLE
+//         document.getElementById("marker").innerHTML = output;
+//         // console.log(`Output = ${output}`)
+//       }
+//     }
+//   };
+//   xhr.send();
+// });
+
+document.getElementById("show-circuits").addEventListener("click", () => {
   //Read Data from JSON
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "markers.json", true);
+  xhr.open("GET", "../JSON/f1Circuits.json", true);
   xhr.onload = function () {
     if (this.status == 200) {
       var response = JSON.parse(xhr.responseText);
       console.log(response.features[0]);
-      var marker = response.features;
+      var circuits = response.features;
 
-      var output = "";
+      var cards = "";
 
-      for (var i = 0; i < marker.length; i++) {
+      for (var i = 0; i < circuits.length; i++) {
         //ADD POLYGONS
-        if (marker[i].geometry.type == "Polygon") {
+        if (circuits[i].geometry.type == "Polygon") {
           var polygon = L.polygon([
             [
-              marker[i].geometry.coordinates[0][0][1],
-              marker[i].geometry.coordinates[0][0][0],
+              circuits[i].geometry.coordinates[0][0][1],
+              circuits[i].geometry.coordinates[0][0][0],
             ],
             [
-              marker[i].geometry.coordinates[0][1][1],
-              marker[i].geometry.coordinates[0][1][0],
+              circuits[i].geometry.coordinates[0][1][1],
+              circuits[i].geometry.coordinates[0][1][0],
             ],
             [
-              marker[i].geometry.coordinates[0][2][1],
-              marker[i].geometry.coordinates[0][2][0],
+              circuits[i].geometry.coordinates[0][2][1],
+              circuits[i].geometry.coordinates[0][2][0],
             ],
           ]).addTo(map);
         }
-        output += `<li> Coordenadas:   ${marker[i].geometry.coordinates[0]} and : ${marker[i].geometry.coordinates[1]} </li>`;
+
+        cards += `
+        <div class="card" style="width: 18rem;">
+         <img src="${circuits[i].properties.img}" class="card-img-top" alt="...">
+           <div class="card-body">
+               <h5 class="card-title">${circuits[i].properties.name}</h5>
+               <p class="card-text">Circuit description.</p>
+               <a href="#" class="btn btn-primary">Add to map</a>
+            </div>
+        </div>`;
+
         //ADD MARKERS
-        var markerJson = L.marker([
-          marker[i].geometry.coordinates[1],
-          marker[i].geometry.coordinates[0],
+        var markerCircuit = L.marker([
+          circuits[i].geometry.coordinates[1],
+          circuits[i].geometry.coordinates[0],
         ]).addTo(map);
 
         //ADD POPUP TO A MARKER
-        var popUp = markerJson.bindPopup("NEW city.");
+        var popUp = markerCircuit.bindPopup(`This circuits is: ${circuits[i].properties.name}`);
 
         //ADD TO A TABLE
-        document.getElementById("marker").innerHTML = output;
+        document.getElementById("circuits").innerHTML = cards;
         // console.log(`Output = ${output}`)
       }
     }
   };
   xhr.send();
 });
+
+var card = `
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${circuits[i].properties.name}</h5>
+    <p class="card-text">Circuit description.</p>
+    <a href="#" class="btn btn-primary">Add to map</a>
+  </div>
+</div>`;

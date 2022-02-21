@@ -3,7 +3,10 @@
     "features": [
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "name": "Spa-Francorchamps",
+                "img": "/img/spa.jpg"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -14,7 +17,10 @@
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "name": "Monza",
+                "img": "/img/monza.jfif"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -25,7 +31,10 @@
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "name": "Suzuka",
+                "img": "/img/suzuka.jfif"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -36,7 +45,10 @@
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "name": "Sakhir",
+                "img": "/img/barein-night.jpg"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -47,7 +59,10 @@
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "name": "Melbourne",
+                "img": "/img/circuito-albert-park-melbourne.jpg"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -58,12 +73,43 @@
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "name": "Monaco",
+                "img": "/img/monaco.jpg"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
                     7.426586151123048,
                     43.74022024121569
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Sepang",
+                "img": "/img/Sepang-International.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.7596608750643026,
+                    101.7317023954498
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Interlagos",
+                "img": "/img/interlagos.jpeg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -23.70020117210225,
+                    -46.697369518674165
                 ]
             }
         }
