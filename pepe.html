@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.0/leaflet.draw.css" />
+	<link rel="stylesheet" href="style.css">
+	<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
+		rel='stylesheet' />
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.0/leaflet.draw.js"></script>
+	<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+	<script src="JSON/geoJSON.js"></script>
+	<link rel="stylesheet" href="assets/styles/style-example.css">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<div id="main_container">
+		<!-- Menu de marcadores -->
+		<div id="info"></div>
+
+		<!-- Mapa -->
+		<div id="map">
+			<div class="marker-position">INSTRUCCIONES</div>
+
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+
+				<!-- Modal content -->
+				<div class="modal-content">
+					<div class="modal-header">
+						<span class="close">&times;</span>
+						<h2>Instrucciones</h2>
+					</div>
+					<div class="modal-body">
+						<p>
+							Por defecto aparecen 16 marcadores, 15 de ellos hacen referencia a
+							las facultades de la Ciudad Universitaria.
+						</p>
+						<p>
+							<span class="bold">El usuario no podrá modificar los marcadores por defecto</span>, pero
+							podrá
+							interactuar con aquellos que él/ella cree.
+						</p>
+						<p>
+							<span class="bold">Para añadir un marcador</span> haz click en cualquiera de las seis
+							opciones de elementos
+							disponibles en el menú lateral del mapa.
+							Al añadir un elemento aparecerá una ventana para añadir un nombre al marcador,
+							una vez añadido también será agregado a la lista de marcadores de la derecha de la página.
+						</p>
+						<p>
+							<span class="bold">Para eliminar marcadores</span> únicamente tendrás que seleccionar el
+							icono de papelera
+							en el menú lateral del mapa, después podrás seleccionar tantos elementos como
+							quieras eliminar. Para finalizar, pulsa el botón Save.
+							Al quitar los elementos, éstos también serán eliminados de la lista de marcadores.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Trigger/Open The Modal -->
+	<button id="myBtn">INSTRUCCIONES</button>
+
+	<script src="nuevoMap.js"></script>
+</body>
+
+</html>
