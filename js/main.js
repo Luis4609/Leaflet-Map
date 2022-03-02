@@ -94,7 +94,7 @@ map.on("dblclick", onMapDoubleClick);
 document.getElementById("show-circuits").addEventListener("click", () => {
   //Read Data from JSON
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "../JSON/f1Circuits.json", true);
+  xhr.open("GET", "f1Circuits.json", true);
   xhr.onload = function () {
     if (this.status == 200) {
       var response = JSON.parse(xhr.responseText);
